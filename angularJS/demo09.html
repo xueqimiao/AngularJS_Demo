@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AngularJS 事件</title>
+</head>
+<script src="http://apps.bdimg.com/libs/angular.js/1.3.9/angular.min.js"></script>
+<body>
+<!--ng-click 指令定义了 AngularJS 点击事件-->
+<!--<div ng-app="myApp" ng-controller="myCtrl">
+
+    <button ng-click="count = count + 1">点我！</button>
+
+    <p>{{ count }}</p>
+
+</div>
+<script>
+    var app = angular.module('myApp', []);
+    app.controller('myCtrl', function($scope) {
+        $scope.count = 0;
+    });
+</script>-->
+<!--ng-hide 指令用于设置应用部分是否可见。
+
+ng-hide="true" 设置 HTML 元素不可见。
+
+ng-hide="false" 设置 HTML 元素可见。-->
+
+<!--应用解析:
+
+第一部分 personController与控制器章节类似。
+
+应用有一个默认属性: $scope.myVar = false;
+
+ng-hide 指令设置 <p>元素及两个输入域是否可见， 根据 myVar 的值 (true 或 false) 来设置是否可见。
+
+toggle() 函数用于切换 myVar 变量的值（true 和 false）。
+
+ng-hide="true" 让元素 不可见-->
+<!--<div ng-app="myApp" ng-controller="personCtrl">
+
+    <button ng-click="toggle()">隐藏/显示</button>
+
+    <p ng-hide="myVar">
+        名: <input type="text" ng-model="firstName"><br>
+        姓名: <input type="text" ng-model="lastName"><br>
+        <br>
+        Full Name: {{firstName + " " + lastName}}
+    </p>
+
+</div>
+
+<script>
+    var app = angular.module('myApp', []);
+    app.controller('personCtrl', function($scope) {
+        $scope.firstName = "John",
+                $scope.lastName = "Doe"
+        $scope.myVar = false;
+        $scope.toggle = function() {
+            $scope.myVar = !$scope.myVar;
+        };
+    });
+</script>-->
+<!--ng-show 指令可用于设置应用中的一部分是否可见 。
+
+ng-show="false" 可以设置 HTML 元素 不可见。
+
+ng-show="true" 可以以设置 HTML 元素可见。
+
+以下实例使用了 ng-show 指令:-->
+<div ng-app="myApp" ng-controller="personCtrl">
+
+    <button ng-click="toggle()">隐藏/显示</button>
+
+    <p ng-show="myVar">
+        名: <input type="text" ng-model="firstName"><br>
+        姓: <input type="text" ng-model="lastName"><br>
+        <br>
+        姓名: {{firstName + " " + lastName}}
+    </p>
+
+</div>
+
+<script>
+    var app = angular.module('myApp', []);
+    app.controller('personCtrl', function($scope) {
+        $scope.firstName = "John",
+                $scope.lastName = "Doe"
+        $scope.myVar = true;
+        $scope.toggle = function() {
+            $scope.myVar = !$scope.myVar;
+        }
+    });
+</script>
+
+
+</body>
+</html>

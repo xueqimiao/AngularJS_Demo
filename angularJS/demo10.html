@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AngularJS 模块</title>
+</head>
+<script src="http://apps.bdimg.com/libs/angular.js/1.3.9/angular.min.js"></script>
+<body>
+<!--模块定义了一个应用程序。
+
+模块是应用程序中不同部分的容器。
+
+模块是应用控制器的容器。
+
+控制器通常属于一个模块。
+
+带有控制器的模块
+应用("myApp") 带有控制器 ("myCtrl"):-->
+<!--<div ng-app="myApp" ng-controller="myCtrl">
+    {{ firstName + " " + lastName }}
+</div>
+
+<script>
+    var app = angular.module("myApp", []);
+    app.controller("myCtrl", function($scope) {
+        $scope.firstName = "John";
+        $scope.lastName = "Doe";
+    });
+</script>-->
+
+<!--模块和控制器包含在 JS 文件中
+通常 AngularJS 应用程序将模块和控制器包含在 JavaScript 文件中。
+
+在以下实例中， "myApp.js" 包含了应用模块的定义程序， "myCtrl.js" 文件包含了控制器：-->
+
+<!--
+<div ng-app="myApp" ng-controller="myCtrl">
+    {{ firstName + " " + lastName }}
+</div>
+
+<script src="js/myApp.js"></script>
+<script src="js/myCtrl.js"></script>
+-->
+
+<!--对于 HTML 应用程序，通常建议把所有的脚本都放置在 <body> 元素的最底部。
+
+这会提高网页加载速度，因为 HTML 加载不受制于脚本加载。
+
+在我们的多个 AngularJS 实例中，您将看到 AngularJS 库是在文档的 <head> 区域被加载。
+
+在我们的实例中，AngularJS 在 <head> 元素中被加载，因为对 angular.module 的调用只能在库加载完成后才能进行。
+
+另一个解决方案是在 <body> 元素中加载 AngularJS 库，但是必须放置在您的 AngularJS 脚本前面：-->
+<!--<div ng-app="myApp" ng-controller="myCtrl">
+    {{ firstName + " " + lastName }}
+</div>
+
+<script src="http://apps.bdimg.com/libs/angular.js/1.3.9/angular.min.js"></script>
+<script>
+    var app = angular.module("myApp", []);
+    app.controller("myCtrl", function($scope) {
+        $scope.firstName = "John";
+        $scope.lastName = "Doe";
+    });
+</script>-->
+
+</body>
+</html>
